@@ -7,7 +7,6 @@ import urllib
 # SET THESE VARIABLES
 debug = False
 api_key = "PASTE_YOUR_WORDNIK_API_KEY_HERE"
-api_key = "a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5"
 
 # LEAVE THESE ALONE
 base_url = "http://api.wordnik.com:80/v4/word.json"
@@ -38,7 +37,7 @@ def main():
         src_word_dir = os.path.join(working_dir,"words_test")
 
     out_dir = os.path.join(working_dir,"output")
-    out_txt_dir = os.path.join(out_dir,"txt")
+    out_txt_dir = os.path.join(out_dir,"lists")
     out_html_dir = os.path.join(out_dir,"html")
 
     if not os.path.exists(out_txt_dir):
@@ -66,8 +65,9 @@ def main():
         # Start writing the reference text file
         with open(os.path.join(out_txt_dir,'%s.txt'%round_name), 'wb') as data_file:
             cw = csv.writer(data_file,
-                            delimiter="|",
-                            quoting=csv.QUOTE_MINIMAL)
+                            dialect="excel-tab",
+                            delimiter="\t",
+                            quoting=csv.QUOTE_ALL)
 
             cw.writerow(["ID","Word","Pronunciation","Definition","Etymology","Example"])
 
