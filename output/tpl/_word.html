@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>McMurdo Spelling Bee</title>
+		<link rel="stylesheet" type="text/css" href="../../css/main.css"/>
+	</head>
+	<body class="word" onclick="advance()">
+		<script>
+			window.addEventListener("keydown", keydown, false);
+
+			function keydown(e) {
+				if (e.keyCode == "37") { // Left
+					window.location.href = "PREVBLANKPAGE.html";
+				}
+				if (e.keyCode == "39") { // Right
+					window.location.href = "NEXTBLANKPAGE.html";
+				}
+			}
+
+			function advance(){
+				window.location.href = 'NEXTBLANKPAGE.html';
+			}
+	   </script>
+
+	   <div id="container">
+			<h1>NEXTWORDSTRING</h1>
+		</div>
+
+	</body>
+</html>

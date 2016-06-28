@@ -1,0 +1,60 @@
+@font-face {
+  font-family: 'PTMono';
+  src: url('../fonts/PTM55FT.ttf');
+}
+
+html,body {
+	width: 100%;
+	height: 100%;
+	margin: 0; padding: 0;
+	background-color: black;
+	font-family: 'PTMono',monospace;
+	color: white;
+	overflow: hidden;
+}
+
+body.word {
+	cursor: pointer;
+}
+
+#container {
+	height: 100%; 
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+h1 {
+	font-size: 8em;
+	letter-spacing: 15px;
+	max-width: 100%;
+	overflow: hidden;
+}
+
+input[type='button'] {
+	position: fixed;
+	cursor: pointer;
+	width: 100px;
+	height: 100px;
+	background: white;
+	border: none !important;
+}
+
+#mp3_button {
+	background-color: black;
+	background: url('img/ico-sound.jpg');
+	right: 20px;
+	bottom: 260px;
+}
+#correct_button {
+	background: green;
+	bottom: 140px;
+	right: 20px;
+}
+
+#incorrect_button {
+	background: red;
+	right: 20px;
+	bottom: 20px;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+ <html>
+	<head>
+		<title>McMurdo Spelling Bee</title>
+		<link rel="stylesheet" type="text/css" href="../../css/main.css"/>
+	</head>
+	<body class="blank">
+		<script>
+			window.addEventListener("keydown", keydown, false);
+
+			function keydown(e) {
+				if (e.keyCode == "37") { // Left
+					window.location.href = "PREVWORDPAGE.html";
+				}
+				if (e.keyCode == "39") { // Right
+					window.location.href = "NEXTWORDPAGE.html";
+				}
+			}
+
+			function playsound() {
+				var prounciation = document.getElementById('mp3');
+				prounciation.play();
+			}
+
+			function answered(status) {
+				var ding = document.getElementById(status);
+				ding.addEventListener("ended", function() {
+					window.location.href = "NEXTWORDPAGE.html";
+				});
+				ding.play();
+			}
+	   </script>
+
+	   <div id="container">
+			<input id="mp3_button" type="button" onclick="playsound()">
+			<input id="correct_button" type="button" onclick="answered('correct')">
+			<input id="incorrect_button" type="button" onclick="answered('incorrect')">
+
+			<audio id="mp3" src="WORDMP3FILE"></audio>
+			<audio id="correct" src="../../audio/correctanswer.wav"></audio>
+			<audio id="incorrect" src="../../audio/buzz.wav" ></audio>
+		</div>
+
+	</body>
+</html>
